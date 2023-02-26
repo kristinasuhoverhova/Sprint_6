@@ -1,13 +1,13 @@
 package ru.yandex.praktikum;
 
-import java.util.List;
-
 import com.example.Animal;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import static org.junit.Assert.assertEquals;
+import java.util.List;
+
+import static org.junit.Assert.assertArrayEquals;
 
 @RunWith(Parameterized.class)
 public class AnimalParamsTest {
@@ -28,8 +28,7 @@ public class AnimalParamsTest {
     public void getFood() throws Exception {
         Animal animal = new Animal();
         List<String> list = animal.getFood(animalKind);
-        int actual = list.size();
-        assertEquals(expected.size(), actual);
+        assertArrayEquals(expected.toArray(),list.toArray());
     }
 }
 
